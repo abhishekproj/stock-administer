@@ -1,6 +1,6 @@
 package com.ty.stockadminister.service.impl;
 
-import java.time.LocalDateTime;
+import java.time.LocalDateTime; 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,9 @@ import com.ty.stockadminister.dao.OwnerDao;
 import com.ty.stockadminister.dao.SalesDao;
 import com.ty.stockadminister.dao.StaffDao;
 import com.ty.stockadminister.dao.StockDao;
-import com.ty.stockadminister.dto.Owner;
 import com.ty.stockadminister.dto.Sales;
 import com.ty.stockadminister.dto.Staff;
 import com.ty.stockadminister.dto.Stock;
-import com.ty.stockadminister.dto.SupplierDto;
 import com.ty.stockadminister.service.SalesService;
 
 @Component
@@ -28,7 +26,7 @@ public class SalesServiceImpl implements SalesService {
 	@Autowired
 	StockDao dao2;
 	@Autowired
-	StaffDao staffDao;
+	StaffDao staffDao;  
 	@Autowired
 	OwnerDao ownerDao;
 
@@ -96,17 +94,16 @@ public class SalesServiceImpl implements SalesService {
 	}
 
 	@Override
-	public ResponseEntity<ResponseStructure<String>> delete( int id) {
+	public ResponseEntity<ResponseStructure<String>> delete(int id) { 
 		ResponseStructure<String> structuer = new ResponseStructure<String>();
 		ResponseEntity<ResponseStructure<String>> entity = null;
 		Sales sales = dao.getById(id);
-			if (dao.delete(id)) {
-				structuer.setStatus(HttpStatus.OK.value());
-				structuer.setMessage("successfull");
-				structuer.setData("User deleted");
-				entity = new ResponseEntity<ResponseStructure<String>>(structuer, HttpStatus.OK);
-			}
-		 else {
+		if (dao.delete(id)) {
+			structuer.setStatus(HttpStatus.OK.value());
+			structuer.setMessage("successfull");
+			structuer.setData("User deleted");
+			entity = new ResponseEntity<ResponseStructure<String>>(structuer, HttpStatus.OK);
+		} else {
 			structuer.setStatus(HttpStatus.OK.value());
 			structuer.setMessage("ID :" + id + " NOTFOUND");
 			structuer.setData("User not deleted");

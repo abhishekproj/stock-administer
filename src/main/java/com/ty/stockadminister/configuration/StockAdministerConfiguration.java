@@ -1,6 +1,6 @@
 package com.ty.stockadminister.configuration;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;

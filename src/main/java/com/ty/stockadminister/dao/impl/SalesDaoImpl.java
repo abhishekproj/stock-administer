@@ -36,7 +36,7 @@ public class SalesDaoImpl implements SalesDao {
 		if (exsitingproduct != null) {
 			exsitingproduct.setName(sales.getName());
 			exsitingproduct.setEmail(sales.getEmail());
-			exsitingproduct.setDate_and_time(sales.getDate_and_time());
+			exsitingproduct.setDate_and_time(sales.getDate_and_time());  
 			exsitingproduct.setPhone(sales.getPhone());
 			exsitingproduct.setQty(sales.getQty());
 			exsitingproduct.setPrice(sales.getPrice());
@@ -50,7 +50,7 @@ public class SalesDaoImpl implements SalesDao {
 		Sales sales = getById(id);
 		if (sales != null) {
 			repository.delete(sales);
-			return true;
+			return true; 
 		} else {
 			return false;
 		}
@@ -63,6 +63,7 @@ public class SalesDaoImpl implements SalesDao {
 		if (optional.isPresent()) {
 			return optional.get();
 		}
+		
 		return null;
 	}
 }

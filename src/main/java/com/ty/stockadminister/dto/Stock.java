@@ -1,6 +1,6 @@
 package com.ty.stockadminister.dto;
 
-import java.util.List;
+import java.util.List; 
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

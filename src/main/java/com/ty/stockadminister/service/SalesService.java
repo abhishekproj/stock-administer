@@ -1,4 +1,4 @@
-package com.ty.stockadminister.service;
+ package com.ty.stockadminister.service;
 
 import java.util.List;
 
